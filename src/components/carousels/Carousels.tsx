@@ -27,8 +27,6 @@ export const Carousels: FC<CarouselsProps> = ({
 
   const [direction, setDirection] = useState<string>("");
 
-  const container = useRef<HTMLDivElement>(null);
-
   const getStyles = useCallback(
     (index: number, direction: string) => {
       let middleIndex;
@@ -121,7 +119,6 @@ export const Carousels: FC<CarouselsProps> = ({
           width: `${imageWidth * (1 + ratio) + gap}px`,
           height: `${imageHeight}px`,
         }}
-        ref={container}
       >
         {imagesInView.map((img, index) => (
           <StyledImage
